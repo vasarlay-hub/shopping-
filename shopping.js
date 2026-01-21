@@ -1,41 +1,23 @@
-let total = 0;
-let loggedIn = false;
+ function login() {
+    // correct login details
+    const correctUsername = "admin";
+    const correctPassword = "1234";
 
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+    // user input
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let message = document.getElementById("message");
 
-    if (user !== "" && pass !== "") {
-        loggedIn = true;
-        document.getElementById("loginStatus").innerText =
-            "Login successful ✔️";
+    if (username === correctUsername && password === correctPassword) {
+        message.style.color = "lightgreen";
+        message.innerHTML = "Login successful ✅";
+
+        // redirect after login
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 1000);
     } else {
-        document.getElementById("loginStatus").innerText =
-            "Please enter username and password ❌";
+        message.style.color = "red";
+        message.innerHTML = "Wrong username or password ❌";
     }
-}
-
-function addToCart(price) {
-    if (!loggedIn) {
-        alert("Please login first");
-        return;
-    }
-    total += price;
-    document.getElementById("total").innerText = total;
-}
-
-function pay() {
-    if (!loggedIn) {
-        alert("Please login first");
-        return;
-    }
-
-    if (total === 0) {
-        alert("Cart is empty");
-        return;
-    }
-
-    alert("Payment successful 🎉 (Fake Payment)");
-    total = 0;
-    document.getElementById("total").innerText = total;
 }
