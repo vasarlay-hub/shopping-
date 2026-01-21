@@ -1,51 +1,21 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-    <title>My Shopping Website</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🛒 Simple Shopping Website</h1>
+<div class="login-box">
+    <h2>Login</h2>
 
-<!-- LOGIN SECTION -->
-<h2>Login</h2>
-<input type="text" id="username" placeholder="Enter username">
-<input type="password" id="password" placeholder="Enter password">
-<button onclick="login()">Login</button>
+    <form>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
 
-<p id="loginStatus"></p>
-
-<hr>
-
-<!-- PRODUCTS -->
-<h2>Products</h2>
-
-<div class="product">
-    <p><b>T-Shirt</b></p>
-    <p>₹500</p>
-    <button onclick="addToCart(500)">Add to Cart</button>
+        <button type="submit">Login</button>
+    </form>
 </div>
 
-<div class="product">
-    <p><b>Shoes</b></p>
-    <p>₹1200</p>
-    <button onclick="addToCart(1200)">Add to Cart</button>
-</div>
-
-<div class="product">
-    <p><b>Watch</b></p>
-    <p>₹2000</p>
-    <button onclick="addToCart(2000)">Add to Cart</button>
-</div>
-
-<hr>
-
-<!-- CART -->
-<h2>Cart</h2>
-<p>Total Amount: ₹<span id="total">0</span></p>
-<button onclick="pay()">Pay Now</button>
-
-<script src="script.js"></script>
 </body>
 </html>
